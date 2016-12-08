@@ -4,6 +4,7 @@ var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '
 
 var allshops = [];
 var storeTable = document.getElementById('locationsTable');
+var inputForm = document.getElementById('inputForm');
 
 function Locations(locationName, minCustPerHour, maxCustPerHour, avgCookiesPerCust) {
   // unique properties
@@ -105,6 +106,29 @@ new Locations('SeaTac Airport', 3, 24, 1.2);
 new Locations('Seattle Center',	11,	38,	3.7);
 new Locations('Capitol Hill', 20, 38, 2.3);
 new Locations('Alki', 2, 16, 4.6);
+
+function handleStoreSubmit(event) {
+  // console.log('This works');
+  event.preventDefault(); // prevents page reload on a 'submit' event
+  if (!event.target.where.value || !event.target.min.value || !event.target.max.value || !event.target.average.value) {
+    return alert('Fields cannot be empty!');
+  }
+
+  var where = event.target.where.value;
+  var min = event.target.min.value;
+  var max = event.target.max.value;
+  var average = event.target.average.value;
+
+  new Locations(where, min, max, average);
+
+  storeTable.innerHTML = '';
+
+  makeHeaderRow();
+  storeRows();
+  makeFooterRow();
+}
+
+inputForm.addEventListener('submit', handleStoreSubmit);
 
 makeHeaderRow();
 storeRows();
