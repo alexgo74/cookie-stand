@@ -1,9 +1,17 @@
 * {
   color: blue;
+  font-family: Arial, sans-serif;
+
 }
 
 td {
-	background-color: #0088dd;
-	padding: 15px;
+	background-color: lightgrey;
+	padding: 13px;
 	border: 2px solid #000000;
+  text-align: center;
+  font-size: 15px;
+}
+
+form {
+  font-size: 14px;
 }

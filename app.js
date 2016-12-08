@@ -6,15 +6,15 @@ var allshops = [];
 var storeTable = document.getElementById('locationsTable');
 
 function Locations(locationName, minCustPerHour, maxCustPerHour, avgCookiesPerCust) {
+  // unique properties
   this.locationName = locationName;
   this.minCustPerHour = minCustPerHour;
   this.maxCustPerHour = maxCustPerHour;
   this.avgCookiesPerCust = avgCookiesPerCust;
-  // non-unique
+  // non-unique properties
   this.randCustPerHour = [];
   this.totalCookiesSoldPerHour = [];
   this.totalDailyCookiesSold = 0;
-  //new array
 
   this.calcRandCustPerHour = function() {
     for (var i = 0; i < hours.length; i++) {
@@ -75,15 +75,29 @@ function storeRows() {
 }
 
 function makeFooterRow() {
-  var footerRow = document.createElement('tr'); // row after header
-  var totalsCell = document.createElement('tfoot');
+  var footerRow = document.createElement('tr');
+  var totalsCell = document.createElement('th');
   totalsCell.textContent = 'Totals';
   footerRow.appendChild(totalsCell);
-  for (var i = 0; i < hours.length; i++) {
-    var totalsMoreCell = document.createElement('tfoot');
-    totalsCell.textContent = hours[i];
-    footerRow.appendChild(totalsMoreCell);
+
+  for (var i = 0; i < allshops[1].totalCookiesSoldPerHour.length; i++) {
+    var allShopsTotal = 0;
+    for (var j = 0; j < allshops.length; j++) {
+      allShopsTotal += allshops[j].totalCookiesSoldPerHour[i];
+    }
+    totalsCell = document.createElement('th');
+    totalsCell.textContent = allShopsTotal;
+    footerRow.appendChild(totalsCell);
   }
+
+  var superTotal = 0;
+  for (var m = 0; m < allshops.length; m++) {
+    superTotal += allshops[m].totalDailyCookiesSold;
+  }
+  totalsCell = document.createElement('th');
+  totalsCell.textContent = superTotal;
+  footerRow.appendChild(totalsCell);
+  storeTable.appendChild(footerRow);
 }
 // console.log(allshops);
 new Locations('First and Pike', 23, 65, 6.3);
