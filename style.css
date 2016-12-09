@@ -1,17 +1,43 @@
-* {
-  color: blue;
+body {
+  color: midnightblue;
   font-family: Arial, sans-serif;
-  background-color: lightblue;
+  background-color: powderblue;
 }
 
-td {
-	background-color: lightgrey;
-	padding: 13px;
-	border: 2px solid #000000;
+h1 {
   text-align: center;
-  font-size: 15px;
+}
+
+img {
+  display: block;
+  margin: auto;
+  width: 50%;
+  border-radius: 8px;
+}
+
+fieldset {
+  width: 1010px;
 }
 
 form {
   font-size: 14px;
+  text-align-last: center;
+
+}
+
+input[type="text"]{
+  border-radius: 5px;
+  width: 92px;
+}
+
+legend {
+  background-color: #efefef;
+}
+
+td {
+	background-color: floralwhite;
+	padding: 13px;
+	/*border: 2px solid #000000;*/
+  text-align: center;
+  font-size: 15px;
 }
