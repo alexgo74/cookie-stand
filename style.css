@@ -1,10 +1,41 @@
+html {
+      height: 100%;
+}
+
 body {
   color: midnightblue;
   font-family: Arial, sans-serif;
   background-color: powderblue;
 }
 
+nav {
+  line-height:;
+  width:135px;
+  display: inline-block;
+  vertical-align: top;
+}
+
 h1 {
+  text-align: center;
+}
+
+h3 {
+
+  text-align: center;
+}
+
+section {
+  width: 460px;
+  display: inline-block;
+  padding-left: 60px;
+}
+
+p {
+  background-color: lightcyan;
+  padding-top: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
   text-align: center;
 }
 
@@ -32,6 +63,10 @@ input[type="text"]{
 
 legend {
   background-color: #efefef;
+}
+
+ul {
+  list-style-type: none;
 }
 
 td {
